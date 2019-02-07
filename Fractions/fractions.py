@@ -17,10 +17,15 @@ class Fraction:
 
     return self.numerator * other.denominator > other.numerator * self.denominator
 
+  def __lt__(self, other):
+
+    return self.numerator * other.denominator < other.numerator * self.denominator
+
   def __str__(self):
 
     return str(self.numerator) + "/" + str(self.denominator)
 
 a = Fraction(1,3)
 b = Fraction(1,2)
-print(b > a)
+c = a + b
+print(c)
