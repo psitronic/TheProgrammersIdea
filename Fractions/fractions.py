@@ -13,6 +13,14 @@ class Fraction:
 
     return Fraction(new_numerator, new_denominator)
 
+  def __sub__(self, other):
+
+    new_denominator = self.denominator * other.denominator
+
+    new_numerator = self.numerator * other.denominator - other.numerator * self.denominator
+
+    return (Fraction(new_numerator, new_denominator),0)[new_numerator == 0]
+
   def __gt__(self, other):
 
     return self.numerator * other.denominator > other.numerator * self.denominator
@@ -29,7 +37,7 @@ class Fraction:
 
     return str(self.numerator) + "/" + str(self.denominator)
 
-a = Fraction(2,4)
+a = Fraction(1,4)
 b = Fraction(1,2)
 
-print(a == b)
+print(a - b)
