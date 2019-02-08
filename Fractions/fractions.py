@@ -21,11 +21,15 @@ class Fraction:
 
     return self.numerator * other.denominator < other.numerator * self.denominator
 
+  def __eq__(self, other):
+
+    return self.numerator * other.denominator == other.numerator * self.denominator
+
   def __str__(self):
 
     return str(self.numerator) + "/" + str(self.denominator)
 
-a = Fraction(1,3)
+a = Fraction(2,4)
 b = Fraction(1,2)
-c = a + b
-print(c)
+
+print(a == b)
